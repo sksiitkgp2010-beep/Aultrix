@@ -117,32 +117,6 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Let's <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Talk</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Ready to transform your business? Get a free consultation and detailed project roadmap. 
-            We typically respond within 2 hours during business hours.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {contactInfo.map((info, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
-                  {info.icon}
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
-                <p className="text-lg font-bold text-blue-600 mb-1">{info.content}</p>
-                <p className="text-sm text-gray-600">{info.subtitle}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form & Information */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
