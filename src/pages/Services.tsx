@@ -147,8 +147,75 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Overview */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {services.map((service, index) => (
+              <div key={service.id} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
+                </div>
+
+                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Problem We Solve:</h4>
+                  <p className="text-gray-600 text-sm">{service.problem}</p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Our Approach:</h4>
+                  <ul className="space-y-2">
+                    {service.approach.map((item, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {service.features.map((feature, idx) => (
+                      <span key={idx} className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Tools & Technologies:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.tools.map((tool, idx) => (
+                      <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  to="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 inline-flex items-center"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Projects Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Recent Projects</h2>
@@ -220,68 +287,6 @@ const Services = () => {
                 <span className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-sm">Analytics</span>
               </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {services.map((service, index) => (
-              <div key={service.id} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
-                </div>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Problem We Solve:</h4>
-                  <p className="text-gray-600 text-sm">{service.problem}</p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Our Approach:</h4>
-                  <ul className="space-y-2">
-                    {service.approach.map((item, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {service.features.map((feature, idx) => (
-                      <span key={idx} className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-8">
-                  <h4 className="font-semibold text-gray-900 mb-3">Tools & Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.tools.map((tool, idx) => (
-                      <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <Link
-                  to="/contact"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 inline-flex items-center"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            ))}
           </div>
         </div>
       </section>
