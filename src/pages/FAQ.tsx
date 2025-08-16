@@ -5,6 +5,9 @@ import { ArrowRight, Plus, Minus, MessageSquare, Phone, Mail, Clock } from 'luci
 const FAQ = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const faqCategories = [
     {
       title: 'Getting Started',
@@ -146,6 +149,7 @@ const FAQ = () => {
           </p>
           <Link
             to="/contact"
+            onClick={scrollToTop}
             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center"
           >
             Ask Your Question
@@ -242,6 +246,7 @@ const FAQ = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
+                onClick={scrollToTop}
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-flex items-center justify-center"
               >
                 Book Free Consultation
@@ -287,12 +292,14 @@ const FAQ = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Link
                 to="/services"
+                onClick={scrollToTop}
                 className="bg-white bg-opacity-10 text-white px-6 py-4 rounded-lg font-semibold hover:bg-opacity-20 transition-all duration-200 backdrop-blur-sm"
               >
                 Our Services
               </Link>
               <Link
                 to="/about"
+                onClick={scrollToTop}
                 className="bg-white bg-opacity-10 text-white px-6 py-4 rounded-lg font-semibold hover:bg-opacity-20 transition-all duration-200 backdrop-blur-sm"
               >
                 About Us
