@@ -6,6 +6,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
@@ -46,6 +49,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
+              onClick={scrollToTop}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Get Started
@@ -85,6 +89,7 @@ const Navbar = () => {
                 to="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 mt-4"
+                  scrollToTop();
               >
                 Get Started
               </Link>

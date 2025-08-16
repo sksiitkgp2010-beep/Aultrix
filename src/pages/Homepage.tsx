@@ -5,6 +5,9 @@ import { ArrowRight, CheckCircle, Star, Users, Target, TrendingUp, Zap, Bot, Bar
 const Homepage = () => {
   const [selectedService, setSelectedService] = useState('web-development');
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const services = [
     {
       id: 'web-development',
@@ -89,6 +92,7 @@ const Homepage = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link 
                   to="/contact"
+                  onClick={scrollToTop}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center"
                 >
                   Get Free Consultation
@@ -129,6 +133,7 @@ const Homepage = () => {
                 </div>
                 <Link
                   to="/contact"
+                  onClick={scrollToTop}
                   className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-flex items-center"
                 >
                   Start Your Project
@@ -153,7 +158,7 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-4">
               {services.map((service) => (
                 <div
@@ -189,7 +194,7 @@ const Homepage = () => {
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white h-fit sticky top-8">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
                 <p className="text-blue-100 mb-6">
@@ -215,6 +220,7 @@ const Homepage = () => {
 
               <Link
                 to="/contact"
+                onClick={scrollToTop}
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-flex items-center"
               >
                 Start Your Project
@@ -287,6 +293,7 @@ const Homepage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
+              onClick={scrollToTop}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-flex items-center justify-center"
             >
               Book Free Consultation
@@ -294,6 +301,7 @@ const Homepage = () => {
             </Link>
             <Link
               to="/services"
+              onClick={scrollToTop}
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200 inline-flex items-center justify-center"
             >
               Explore Services
